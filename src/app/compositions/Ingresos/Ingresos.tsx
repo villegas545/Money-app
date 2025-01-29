@@ -6,16 +6,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import InputNumber from "@/app/components/InputNumber/InputNumber";
 
 const Ingresos = () => {
-  const [cantidad, setCantidad] = useState<number>(0);
-  const [descripcion, setDescripcion] = useState<string>();
+  const [quantity, setQuantity] = useState<number>(0);
+  const [description, setDescription] = useState<string>();
 
   const [total, setTotal] = useState(0);
 
   const calculateTotal = () => {
-    const tempTotal = Number(cantidad) + Number(total);
+    const tempTotal = Number(total) + Number(total);
     setTotal(tempTotal);
-    setCantidad(0);
-    setDescripcion("");
+    setTotal(0);
+    setDescription("");
   };
 
   return (
@@ -23,13 +23,13 @@ const Ingresos = () => {
       <View className="flex-1 items-center ">
         <Text className="font-serif text-lg mb-3">Incrementar saldo</Text>
         <InputNumber
-          value={cantidad.toString()}
-          onChangeText={(texto) => setCantidad(Number(texto))}
+          value={quantity.toString()}
+          onChangeText={(texto) => setTotal(Number(texto))}
         ></InputNumber>
 
         <TextInput
-          value={descripcion}
-          onChangeText={(texto) => setDescripcion(texto)}
+          value={description}
+          onChangeText={(texto) => setDescription(texto)}
           keyboardType="numbers-and-punctuation"
           placeholder="ingresa la descripcion"
           className="border border-gray-300 p-2 rounded w-64 mb-3"
